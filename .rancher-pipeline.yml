@@ -1,0 +1,15 @@
+stages:
+- name: ceshi
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./deployment/docker/Dockerfile
+      buildContext: .
+      tag: nni:v1.0.0
+      registry: index.docker.io
+timeout: 60
+notification:
+  recipients:
+  - recipient: 3303387067@qq.com
+    notifier: c-mrvjp:n-5qh2v
+  condition:
+  - Success
